@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beans  xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:util="http://www.springframework.org/schema/util"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    						http://www.springframework.org/schema/beans/spring-beans.xsd
+   							http://www.springframework.org/schema/util 
+    						http://www.springframework.org/schema/util/spring-util.xsd">
+	<bean id="container2" class="spring.di.collections.specific.Container">
+		<property name="fruits">
+			<util:list list-class="java.util.Vector">
+				<value>Mango</value>
+				<value>Apple</value>
+				<value>Watermelon</value>
+			</util:list>
+		</property>
+		
+		<property name="cricketers">
+			<util:set set-class="java.util.TreeSet">
+				<value>Sachin Tendulkar</value>
+				<value>Rahul Dravid</value>
+				<value>M S Dhoni</value>
+			</util:set>
+		</property>
+		
+		<property name="countryCapitals">
+			<util:map map-class="java.util.Hashtable">
+				<entry key="India" value="Delhi"/>
+				<entry key="China" value="Bejing"/>
+				<entry key="Russia" value="Mosco"/>
+			</util:map>
+		</property>
+		
+		<property name="props" >
+			<util:properties location="classpath:resources/container2.properties"></util:properties>
+		</property>
+
+	</bean>
+</beans>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<bean id="container" class="spring.di.collections.all.Container">
+		<property name="fruits">
+			<list>
+				<value>Mango</value>
+				<value>Apple</value>
+				<value>Watermelon</value>
+			</list>
+		</property>
+		
+		<property name="cricketers">
+			<set>
+				<value>Sachin Tendulkar</value>
+				<value>Rahul Dravid</value>
+				<value>M S Dhoni</value>
+			</set>
+		</property>
+		
+		<property name="countryCapitals">
+			<map>
+				<entry key="India" value="Delhi"/>
+				<entry key="China" value="Bejing"/>
+				<entry key="Russia" value="Mosco"/>
+			</map>
+		</property>
+		
+		<property name="props">
+			<props>
+				<prop key="drivername">oracle.jdbc.driver.OracleDriver</prop>
+				<prop key="user">scott</prop>
+				<prop key="password">tiger</prop>
+				<prop key="driverurl">jdbc:oracle:thin:@localhost:1521:orcl</prop> 
+			</props>
+		</property>
+		
+	</bean>
+</beans>

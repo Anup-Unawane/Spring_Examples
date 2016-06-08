@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<bean id="engine" class="spring.di.autowire.autodetect.Engine">
+		<property name="modelYear" value="2016"/>
+	</bean>
+	
+	<bean id="e2" class="spring.di.autowire.autodetect.Engine" autowire-candidate="false" >
+		<property name="modelYear" value="2015"/>
+	</bean>
+	
+	<bean id="car_autodetect" class="spring.di.autowire.autodetect.Car" autowire="autodetect">
+		<constructor-arg value="Ferrari"/>
+	</bean>
+	
+</beans>

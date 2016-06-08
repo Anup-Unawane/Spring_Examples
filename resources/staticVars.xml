@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:context="http://www.springframework.org/schema/context"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    						http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+	<bean id = "car_static_var" class="spring.di.staticvars.Car"/>
+	
+	<!-- Static Variable DI -->
+	<bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+	 <property name="staticMethod" value="spring.di.staticvars.Car.setCarType"/>
+	 <property name="arguments">
+		<list>
+			<value>Hyundai Grand I 10</value>
+		</list>	 
+	 </property>
+	</bean>
+	
+</beans>
