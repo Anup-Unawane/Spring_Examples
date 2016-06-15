@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans  xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:context="http://www.springframework.org/schema/context"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    						http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+	
+	<!-- Lookmethod override for Interface Car -->
+	<bean id="c" class="spring.di.lookupmethod.Car">
+		<lookup-method name="getCarEngine"  bean="e1"/>
+	</bean>	
+	
+	<bean id="e1" class="spring.di.lookupmethod.Engine" >
+		<property name="name" value="SwiftEngine"/>
+	</bean>
+	
+	
+	<!-- Look up method for Bus Abstract Class -->
+	<bean id="b" class="spring.di.lookupmethod.Bus">
+		<lookup-method name="getBusEngine"  bean="e2"/>
+	</bean>	
+	
+	<bean id="e2" class="spring.di.lookupmethod.Engine" >
+		<property name="name" value="Ashok Leyland Engine"/>
+	</bean>
+	
+	
+	<!-- For Truck Concrete Class -->
+	<bean id="t" class="spring.di.lookupmethod.Truck">
+		<lookup-method name="getTruckEngine"  bean="e3"/>
+	</bean>	
+	
+	<bean id="e3" class="spring.di.lookupmethod.Engine" >
+		<property name="name" value="Tata Engine"/>
+	</bean>
+</beans>

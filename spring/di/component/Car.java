@@ -3,6 +3,7 @@ package spring.di.component;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+//Here @Named Annotation from Java can be used
 @Component
 public class Car 
 {

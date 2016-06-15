@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans  xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:context="http://www.springframework.org/schema/context"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    						http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+	
+	<!-- Load properties file into IOC Context Scope-->
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location" value="resources/DB.properties"/>
+	</bean>	
+	
+	<!-- Inject context scope data into required bean-->
+	
+	<bean id="dc" class="spring.di.propertiesfile.DBConnector">
+		<property name="driver" value="${DRIVER}"/>
+		<property name="url" value="${URL}"/>
+		<property name="user" value="${USER}"/>
+		<property name="password" value="${PASSWORD}"/>
+	</bean>
+
+</beans>
